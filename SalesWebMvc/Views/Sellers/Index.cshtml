@@ -1,0 +1,14 @@
+﻿@page
+@model SalesWebMvc.Controllers.SellersController;
+
+@{
+    // Verifica se ViewData não é nulo antes de atribuir um valor a ele
+    if (ViewData != null)
+    {
+        ViewData["Title"] = "Index";
+    }
+}
+
+<h2>Sellers</h2>
+
+<p>Sellers index page</p>
