@@ -11,6 +11,7 @@ namespace SalesWebMvc.Models
         public DateTime BirthDate { get; set; }
         public double BaseSalary { get; set; } 
         public Departament Departament { get; set; }
+        public int DepartamentId { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
         //Sales é a lista de vendas associadas ao vendedor (Seller)
         public Seller()
