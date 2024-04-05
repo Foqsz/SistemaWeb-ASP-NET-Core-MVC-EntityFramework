@@ -4,6 +4,8 @@ using SalesWebMvc.Data;
 using System.Configuration;
 using SalesWebMvc.Models;
 using SalesWebMvc.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
@@ -19,14 +21,19 @@ builder.Services.AddScoped<DepartamentService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+var enUS = new CultureInfo("en-US");
+var localizationOption = new RequestLocalizationOptions()
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-} 
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo> { enUS },
+    SupportedUICultures = new List<CultureInfo> { enUS },
+};
+
+app.UseRequestLocalization(localizationOption);
+
+// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+app.UseHsts();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
