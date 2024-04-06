@@ -1,5 +1,5 @@
 
-# Sistema de Acompanhamento de Vendas
+# Sistema de Acompanhamento de Vendas (SalesWebMvc)
 
 Este é um projeto desenvolvido durante o curso de C# avançado apresentado pelo professor Nelio Alves. Trata-se de uma plataforma de acompanhamento de vendas utilizando ASP.NET Core e SQL, onde foram aplicados diversos conceitos como Programação Orientada a Objetos (POO), CRUD, Injeção de Dependência, Expressões Lambda, entre outras ferramentas.
 
@@ -58,4 +58,3 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 © [Victor Vinicius Alves de Lima Souza] - [2024]
-```
