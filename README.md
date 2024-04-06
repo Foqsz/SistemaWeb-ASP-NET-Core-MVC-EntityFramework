@@ -1,4 +1,4 @@
-```markdown
+
 # Sistema de Acompanhamento de Vendas
 
 Este é um projeto desenvolvido durante o curso de C# avançado apresentado pelo professor Nelio Alves. Trata-se de uma plataforma de acompanhamento de vendas utilizando ASP.NET Core e SQL, onde foram aplicados diversos conceitos como Programação Orientada a Objetos (POO), CRUD, Injeção de Dependência, Expressões Lambda, entre outras ferramentas.
@@ -30,9 +30,7 @@ Este é um projeto desenvolvido durante o curso de C# avançado apresentado pelo
    - SQL Server instalado ou um serviço de banco de dados compatível
 
 2. **Clonar o Repositório**:
-   ```bash
    git clone https://github.com/Foqsz/SistemaWeb-ASP-NET-Core-MVC-EntityFramework
-   ```
 
 3. **Configurar o Banco de Dados**:
    - Crie um banco de dados SQL Server
