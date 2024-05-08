@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SalesWebMvc.Models;
+using SalesWebMvc.Models.ViewModels;
 using System.Diagnostics;
 
 namespace SalesWebMvc.Controllers
@@ -18,6 +19,14 @@ namespace SalesWebMvc.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Salles Web MVC App From C# Course";
+            ViewData["email"] = "Victor Vinicius";
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -26,7 +35,7 @@ namespace SalesWebMvc.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new SalesWebMvc.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
