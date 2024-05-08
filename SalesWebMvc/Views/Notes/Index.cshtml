@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SalesWebMvc.Models.Notes>
+
+@{
+    ViewData["Title"] = "Notes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Create New Notes</a>
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.Content</td>
+                    <td>@note.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@note.Id" method="post">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No notes found.</p>
+}
